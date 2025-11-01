@@ -5,11 +5,11 @@
 .PHONY: shell trade dry-run
 
 # Default configuration
-CONFIG ?= user_data/config.json
+CONFIG ?= user_data/config_multitrend.json
 STRATEGY ?= MultiTrendStrategy
-TIMEFRAME ?= 15m
+TIMEFRAME ?= 5m
 PAIRS ?= SOL/USDT:USDT
-EXCHANGE ?= okx
+EXCHANGE ?= binance
 DAYS ?= 30
 TIMERANGE ?=
 
@@ -69,6 +69,7 @@ dry-run: ## Start bot in dry-run mode
 
 download-data: ## Download historical data (PAIRS, EXCHANGE, DAYS, TIMEFRAME)
 	docker compose run --rm freqtrade download-data \
+		--config $(CONFIG) \
 		--pairs $(PAIRS) \
 		--exchange $(EXCHANGE) \
 		--days $(DAYS) \
