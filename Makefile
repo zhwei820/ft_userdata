@@ -11,7 +11,6 @@ TIMEFRAME ?= 15m
 PAIRS ?= SOL/USDT:USDT
 EXCHANGE ?= okx
 DAYS ?= 30
-# TIMERANGE ?=
 TIMERANGE ?= $(shell date -u -v-30d '+%Y%m%d' 2>/dev/null || date -u -d '30 days ago' '+%Y%m%d')-$(shell date -u '+%Y%m%d')
 
 echo:
@@ -77,7 +76,8 @@ download-data: ## Download historical data (PAIRS, EXCHANGE, DAYS, TIMEFRAME)
 		--pairs $(PAIRS) \
 		--exchange $(EXCHANGE) \
 		--days $(DAYS) \
-		-t $(TIMEFRAME)
+		-t $(TIMEFRAME) \
+		--data-format-ohlcv json
 
 list-data: ## List available data
 	docker compose run --rm freqtrade list-data --exchange $(EXCHANGE)
@@ -98,7 +98,8 @@ backtest: ## Run backtesting (CONFIG, STRATEGY, TIMERANGE, TIMEFRAME)
 		--config $(CONFIG) \
 		--strategy $(STRATEGY) \
 		$(if $(TIMERANGE),--timerange $(TIMERANGE),) \
-		-i $(TIMEFRAME)
+		-i $(TIMEFRAME) \
+		--data-format-ohlcv json
 
 backtest-show: ## Show backtest results
 	docker compose run --rm freqtrade backtesting-show
