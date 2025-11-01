@@ -11,7 +11,11 @@ TIMEFRAME ?= 15m
 PAIRS ?= SOL/USDT:USDT
 EXCHANGE ?= okx
 DAYS ?= 30
-TIMERANGE ?=
+# TIMERANGE ?=
+TIMERANGE ?= $(shell date -u -v-30d '+%Y%m%d' 2>/dev/null || date -u -d '30 days ago' '+%Y%m%d')-$(shell date -u '+%Y%m%d')
+
+echo:
+	@echo $(TIMERANGE)
 
 ##@ General
 
