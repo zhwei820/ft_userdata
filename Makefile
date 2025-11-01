@@ -7,7 +7,7 @@
 # Default configuration
 CONFIG ?= user_data/config_multitrend.json
 STRATEGY ?= MultiTrendStrategy
-TIMEFRAME ?= 15m
+TIMEFRAME ?= 5m
 PAIRS ?= SOL/USDT:USDT
 EXCHANGE ?= okx
 DAYS ?= 30
