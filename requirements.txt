@@ -1,0 +1,35 @@
+# Core dependencies (usually included in freqtrade docker image)
+# Uncomment if needed for local development
+freqtrade>=2024.1
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Technical Analysis libraries
+# TA-Lib is included in freqtrade docker image
+# technical is also included in freqtrade docker image
+
+# Additional technical analysis libraries (optional)
+finta>=1.3
+pandas-ta>=0.3.14b
+
+
+# Data visualization
+plotly>=5.13.0
+matplotlib>=3.7.0
+
+# Additional utilities
+python-telegram-bot>=20.0
+arrow>=1.2.3
+cachetools>=5.3.0
+requests>=2.31.0
+python-rapidjson>=1.10
+
+# Development tools (optional)
+pytest>=7.3.1
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
+pytest-asyncio>=0.21.0
+mypy>=1.2.0
+ruff>=0.0.265
+pre-commit>=3.3.1
+
