@@ -6,10 +6,10 @@
 
 # Default configuration
 CONFIG ?= user_data/config.json
-STRATEGY ?= SampleStrategy
-TIMEFRAME ?= 5m
-PAIRS ?= ETH/BTC BTC/USDT
-EXCHANGE ?= binance
+STRATEGY ?= MultiTrendStrategy
+TIMEFRAME ?= 15m
+PAIRS ?= SOL/USDT
+EXCHANGE ?= okx
 DAYS ?= 30
 TIMERANGE ?=
 
