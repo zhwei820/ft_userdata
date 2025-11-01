@@ -8,7 +8,7 @@
 CONFIG ?= user_data/config.json
 STRATEGY ?= MultiTrendStrategy
 TIMEFRAME ?= 15m
-PAIRS ?= SOL/USDT
+PAIRS ?= SOL/USDT:USDT
 EXCHANGE ?= okx
 DAYS ?= 30
 TIMERANGE ?=
