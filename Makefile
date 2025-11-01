@@ -9,7 +9,7 @@ CONFIG ?= user_data/config_multitrend.json
 STRATEGY ?= MultiTrendStrategy
 TIMEFRAME ?= 5m
 PAIRS ?= SOL/USDT:USDT
-EXCHANGE ?= binance
+EXCHANGE ?= okx
 DAYS ?= 30
 TIMERANGE ?=
 
